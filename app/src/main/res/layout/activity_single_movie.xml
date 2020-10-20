@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.single_movie_details.SingleMovie">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="match_parent">
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:visibility="visible"
+            android:id="@+id/progress_bar"
+            android:layout_gravity="center"
+            android:layout_height="match_parent"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:id="@+id/txt_error"
+            android:gravity="center"
+            android:visibility="gone"
+            android:text="Connection Problem!!"
+            android:layout_height="match_parent"/>
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:id="@+id/linearLayout"
+                android:layout_height="match_parent">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:scaleType="matrix"
+                    android:id="@+id/iv_movie_poster"
+                    android:layout_gravity="center"
+                    android:src="@android:drawable/ic_dialog_map"
+                    android:layout_height="500dp"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:id="@+id/movie_title"
+                        android:gravity="center"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/charlenee"
+                        android:text="Movie Title"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:id="@+id/movie_tagline"
+                        android:gravity="center"
+                        android:fontFamily="@font/calibri"
+                        android:text="Movie Tagline"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:fontFamily="@font/calibri"
+
+                        android:textSize="26sp"
+                        android:text="Movie Info"
+                        android:layout_height="wrap_content"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:gravity="center"
+                        android:text="Release Date: "
+                        android:textStyle="bold"
+                        android:fontFamily="@font/calibri"
+
+                        android:layout_height="match_parent"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:id="@+id/movie_release_date"
+                        android:gravity="center"
+                        android:fontFamily="@font/calibri"
+
+                        android:text="Movie Title"
+                        android:layout_height="match_parent"/>
+                </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+                        <RatingBar
+                            android:layout_width="wrap_content"
+                            android:numStars="10"
+                            android:id="@+id/ratingbar"
+                            android:layout_height="wrap_content"/>
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:gravity="center"-->
+<!--                            android:text="Rating : "-->
+<!--                            android:textStyle="bold"-->
+<!--                            android:fontFamily="@font/calibri"-->
+
+<!--                            android:layout_height="wrap_content"/>-->
+<!--                        <TextView-->
+<!--                            android:layout_width="wrap_content"-->
+<!--                            android:id="@+id/movie_rating"-->
+<!--                            android:gravity="center"-->
+<!--                            android:text="8"-->
+<!--                            android:fontFamily="@font/calibri"-->
+
+<!--                            android:layout_height="wrap_content"/>-->
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:fontFamily="@font/calibri"
+
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:gravity="center"
+                            android:text="Run Time: "
+                            android:textStyle="bold"
+                            android:fontFamily="@font/calibri"
+
+                            android:layout_height="wrap_content"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:id="@+id/movie_runtime"
+                            android:gravity="center"
+                            android:text="2.3hrs"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:gravity="center"
+                            android:text="Budget: "
+                            android:fontFamily="@font/calibri"
+
+                            android:textStyle="bold"
+
+                            android:layout_height="wrap_content"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:id="@+id/movie_budget"
+                            android:gravity="center"
+                            android:text="13000$"
+                            android:fontFamily="@font/calibri"
+
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:gravity="center"
+                            android:text="Revenue: "
+                            android:textStyle="bold"
+
+                            android:layout_height="wrap_content"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:id="@+id/movie_revenue"
+                            android:gravity="center"
+                            android:text="1239000$"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:gravity="center"
+                            android:text="Overview: "
+                            android:textStyle="bold"
+                            android:fontFamily="@font/calibri"
+
+                            android:layout_height="wrap_content"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:id="@+id/movie_overview"
+                            android:gravity="center"
+                            android:fontFamily="@font/calibri"
+
+                            android:text="Overview---------"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
