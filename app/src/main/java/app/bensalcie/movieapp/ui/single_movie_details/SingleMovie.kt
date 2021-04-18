@@ -1,8 +1,11 @@
 package app.bensalcie.movieapp.ui.single_movie_details
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
@@ -14,16 +17,20 @@ import app.bensalcie.movieapp.data.api.TheMovieDbInterface
 import app.bensalcie.movieapp.data.repository.NetworkState
 import app.bensalcie.movieapp.data.vo.MovieDetails
 import com.bumptech.glide.Glide
+import com.google.android.gms.ads.*
 import kotlinx.android.synthetic.main.activity_single_movie.*
 import java.text.NumberFormat
 import java.util.*
 
 class SingleMovie : AppCompatActivity() {
+    private lateinit var mInterstitialAd: InterstitialAd
+
     private lateinit var viewModel: SingleMovieViewModel
     private lateinit var movieRepository: MovieDetailsRepository
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_single_movie)
+        MobileAds.initialize(this)
 
         val movieId =intent.getIntExtra("id",1)
         val apiService :TheMovieDbInterface= TheMovieDbClient.getClient()
@@ -37,6 +44,10 @@ class SingleMovie : AppCompatActivity() {
             progress_bar.visibility= if (it== NetworkState.LOADING)View.VISIBLE else View.GONE
             txt_error.visibility= if (it==NetworkState.ERROR)View.VISIBLE else View.GONE
         })
+
+
+
+
     }
 
     private fun bindUI(movie: MovieDetails) {
@@ -54,6 +65,37 @@ class SingleMovie : AppCompatActivity() {
 
         val moviePosterUrl = POSTER_BASE_URL+movie.posterPath
         Glide.with(this).load(moviePosterUrl).into(iv_movie_poster)
+
+        btnWatch.setOnClickListener {
+            startActivity(Intent(this,WatchActivity::class.java).putExtra("name",movie.title))
+        }
+
+        mInterstitialAd = InterstitialAd(this).apply {
+            adUnitId = "ca-app-pub-5168781139590668/4076760081"
+            adListener = (
+                    object : AdListener() {
+                        override fun onAdLoaded() {
+                            Toast.makeText(this@SingleMovie, "onAdLoaded()", Toast.LENGTH_SHORT)
+                                .show()
+                        }
+
+                        override fun onAdFailedToLoad(loadAdError: LoadAdError) {
+                            val error =
+                                "domain: ${loadAdError.domain}, code: ${loadAdError.code}, " +
+                                        "message: ${loadAdError.message}"
+                            Toast.makeText(
+                                this@SingleMovie,
+                                "onAdFailedToLoad() with error $error",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }
+
+                        override fun onAdClosed() {
+                        }
+                    }
+                    )
+        }
+
     }
 
     private fun getViewModel (movieId:Int):SingleMovieViewModel{

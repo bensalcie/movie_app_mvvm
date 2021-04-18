@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.single_movie_details.WatchActivity">
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:orientation="vertical"
+       android:layout_height="match_parent">
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:fontFamily="@font/calibri"
+           android:gravity="center"
+           android:text="Instructions on How to watch"
+           android:textSize="26sp"
+           android:layout_marginTop="45dp"
+           android:textStyle="bold"
+           android:layout_gravity="center_horizontal"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent" />
+
+       <TextView
+           android:id="@+id/tvmovie_link"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:fontFamily="@font/calibri"
+           android:layout_marginTop="10dp"
+           android:gravity="center"
+           android:text="1.Download this app from here"
+           android:textSize="20sp"
+
+           android:layout_gravity="center_horizontal"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent" />
+       <ImageView
+           android:layout_width="match_parent"
+           android:src="@drawable/picone"
+           android:layout_marginTop="10dp"
+           android:layout_marginStart="10dp"
+           android:layout_marginEnd="10dp"
+           android:layout_marginBottom="10dp"
+           android:scaleType="centerCrop"
+           android:layout_height="250dp"/>
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:fontFamily="@font/calibri"
+           android:layout_marginTop="10dp"
+           android:gravity="center"
+           android:text="2.You don't need an account, so everything is accessible on opening"
+           android:textSize="20sp"
+
+           android:layout_gravity="center_horizontal"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent" />
+       <TextView
+           android:id="@+id/tvMovieName"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:fontFamily="@font/calibri"
+           android:layout_marginTop="10dp"
+           android:gravity="center"
+           android:textSize="20sp"
+
+           android:layout_gravity="center_horizontal"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent" />
+       <ImageView
+           android:layout_width="match_parent"
+           android:src="@drawable/pictwo"
+           android:layout_marginTop="10dp"
+           android:layout_marginStart="10dp"
+           android:layout_marginEnd="10dp"
+           android:layout_marginBottom="10dp"
+           android:scaleType="centerCrop"
+           android:layout_height="250dp"/>
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:fontFamily="@font/calibri"
+           android:layout_marginTop="10dp"
+           android:gravity="center"
+           android:text="4.Enjoy your movies without hustle."
+           android:textSize="20sp"
+           android:layout_gravity="center_horizontal"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent" />
+       <ImageView
+           android:layout_width="match_parent"
+           android:src="@drawable/picthree"
+           android:layout_marginTop="10dp"
+           android:layout_marginBottom="10dp"
+           android:layout_marginStart="10dp"
+           android:layout_marginEnd="10dp"
+           android:scaleType="centerCrop"
+           android:layout_height="250dp"/>
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:fontFamily="@font/calibri"
+           android:layout_marginTop="10dp"
+           android:gravity="center"
+           android:text="5.Remember to share"
+           android:textSize="20sp"
+
+           android:layout_gravity="center_horizontal"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent" />
+   </LinearLayout>
+</ScrollView>
