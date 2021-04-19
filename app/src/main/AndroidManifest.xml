@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="app.bensalcie.movieapp">
+    package="app.bensalcie.movieappnew">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -15,11 +15,11 @@
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-5168781139590668~7820563976"/>
-        <activity android:name=".ui.single_movie_details.WatchActivity">
+        <activity android:name="app.bensalcie.movieappnew.ui.single_movie_details.WatchActivity">
 
         </activity>
         <activity
-            android:name=".HomeActivity"
+            android:name="app.bensalcie.movieappnew.HomeActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -27,7 +27,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.single_movie_details.SingleMovie" />
+        <activity android:name="app.bensalcie.movieappnew.ui.single_movie_details.SingleMovie" />
 
     </application>
 
